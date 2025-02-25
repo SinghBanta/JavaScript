@@ -55,3 +55,27 @@
 //     return x1*x2
 // })
 // console.log(result)
+
+
+//Guess the number game
+//Create a random number between 1 to 100. Take input from the user and tell if the number is smaller or larger. Keep asking the user to guess the number until the correct number is guessed.  
+let random = Math.floor(Math.random() * 100);
+let chance = 0;
+let guessNumber;
+do {
+    let input = prompt("Enter a random number between 1 to 99");
+    if (input === null) {
+        alert("Prompt cancelled. Exiting the game.");
+        break;
+    }
+    guessNumber = Number.parseInt(input);
+    chance++;
+
+    if (guessNumber === random) {
+        alert("Congratulations! You have guessed the number, number is: " + random + ". Chances taken: " + chance);
+    } else if (guessNumber < random) {
+        alert("You have guessed a smaller number");
+    } else {
+        alert("You have guessed a larger number");
+    }
+} while (guessNumber !== random);
